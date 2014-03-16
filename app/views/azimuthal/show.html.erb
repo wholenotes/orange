@@ -8,10 +8,10 @@
     <link type="text/css" rel="stylesheet" href="/assets/azimuthal.css"/>
     <link type="text/css" rel="stylesheet" href="/assets/colorbrewer.css"/>
     <style type="text/css">
-
+        /*size of the svg element*/
         svg {
-            width: 1280px;
-            height: 800px;
+            width: 640px;
+            height: 400px;
             pointer-events: all;
         }
 
@@ -45,21 +45,21 @@
     var feature;
 
     var projection = d3.geo.azimuthal()
-            .scale(380)
-            .origin([-71.03,42.37])
+            .scale(190)  //scales the size of the globe
+            .origin([-71.03,42.37])  //starting focus/position of the global
             .mode("orthographic")
-            .translate([640, 400]);
+            .translate([320,200]);     // translation is position of globe on the svg canvas
 
     var circle = d3.geo.greatCircle()
             .origin(projection.origin());
 
     // TODO fix d3.geo.azimuthal to be consistent with scale
     var scale = {
-        orthographic: 380,
-        stereographic: 380,
-        gnomonic: 380,
-        equidistant: 380 / Math.PI * 2,
-        equalarea: 380 / Math.SQRT2
+        orthographic: 190,
+        stereographic: 190,
+        gnomonic: 190,
+        equidistant: 190 / Math.PI * 2,
+        equalarea: 190 / Math.SQRT2
     };
 
     var path = d3.geo.path()

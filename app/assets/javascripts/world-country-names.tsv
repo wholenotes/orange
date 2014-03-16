@@ -1,13 +1,13 @@
 id	name	word_for_orange
--1	Northern Cyprus	test1
--2	Kosovo	test2
--3	Somaliland	test3
+-1	Northern Cyprus	sample_word_1
+-2	Kosovo	sample_word_2
+-3	Somaliland	sample_word_3
 4	Afghanistan	Pashto: نارنج
-8	Albania	some other word
-10	Antarctica	a third word
-12	Algeria	more words
-16	American Samoa	orange
-20	Andorra	naranja
+8	Albania	sample_word_4
+10	Antarctica	sample_word_5
+12	Algeria	sample_word_6
+16	American Samoa	sample_word_7
+20	Andorra	sample_word_8
 24	Angola
 28	Antigua and Barbuda
 31	Azerbaijan
