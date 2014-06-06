@@ -10,8 +10,8 @@
     <style type="text/css">
         /*size of the svg element*/
         svg {
-            width: 640px;
-            height: 400px;
+            width: 768px;
+            height: 480px;
             pointer-events: all;
         }
 
@@ -28,8 +28,11 @@
 </head>
 <body>
 <div id="body">
+    <div class="right-panel">
+      <h3>Country</h3>
+      <div id="country-content"></div>
+    </div>
     <div id="footer">
-        d3.geo.azimuthal
         <div class="hint">drag to rotate the origin</div>
         <div><select>
             <option value="equalarea">equalarea</option>
@@ -71,11 +74,11 @@
             .on("mousedown", mousedown);
 
     d3.json("/assets/world-countries.json", function(collection) {
-
         feature = svg.selectAll("path")
                 .data(collection.features)
                 .enter().append("svg:a")
-                .attr("xlink:href", "http://nytimes.com")
+                .attr("xlink:href", function(d) { return "/countries/" + d.properties.name.replace(/\s/g, "_"); })
+                .attr("xlink:data-remote", true)
                 .append("svg:path")
                 .attr("d", clip);
 
@@ -88,11 +91,12 @@
         feature.append("svg:title")
                 .text(function(d) { return d.properties.name; });
 
-        feature.append("svg:p")
-                .text(function(d) { return "hello"; });
+//        feature.append("svg:p")
+//                .text(function(d) { return "hello"; });
 
         feature.append("svg:a")
-                .attr("xlink:href", "http://nytimes.com");
+                .attr("xlink:href", function(d) { return "/countries/" + d.properties.name.replace(/\s/g, "_"); })
+                .attr("xlink:data-remote", true);
     });
 
     d3.select(window)
@@ -139,6 +143,5 @@
     }
 
 </script>
-<div>Hello</div>
 </body>
 </html>
