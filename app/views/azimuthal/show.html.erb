@@ -99,6 +99,11 @@
                 .attr("xlink:data-remote", true);
     });
 
+              svg.append("circle")
+                 .attr("cx",320)
+                 .attr("cy",200)
+                 .attr("r",190);
+
     d3.select(window)
             .on("mousemove", mousemove)
             .on("mouseup", mouseup);

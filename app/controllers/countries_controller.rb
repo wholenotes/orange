@@ -16,11 +16,13 @@ class CountriesController < ApplicationController
     puts "in controller show--------------"
     @country = Country.find_by_name(params[:id])
     puts "found country #{@country}--------------"
-    respond_to do |format|
-      puts "format #{format.inspect}--------------"
-      format.html # show.html.erb
-      format.json { render json: @country }
-      format.js
+    if @country
+      respond_to do |format|
+        puts "format #{format.inspect}--------------"
+        format.html # show.html.erb
+        format.json { render json: @country }
+        format.js
+      end
     end
   end
 

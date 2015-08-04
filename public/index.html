@@ -63,15 +63,23 @@
                       i = -1,
                       n = countries.length;
 
-              countries = countries.filter(function(d) {
-                  return names.some(function(n) {
-                      console.log(n.word_for_orange);
-                      if (d.id == n.id) d.word_for_orange= n.word_for_orange;
-                      if (d.id == n.id)  d.name = n.name;
-                      if (d.id == n.id) return d; //return d.name = n.name;
+              countries = countries.filter(function(diagramCountry) {
+                  return names.some(function(tsvCountry) {
+//                      console.log(n.word_for_orange);
+                      if (diagramCountry.id == tsvCountry.id) {
+                          diagramCountry.word_for_orange= tsvCountry.word_for_orange;
+                          // If sort order is not specified, use the id for the sort order. If that is NaN, then
+                          // default to 1000
+                          var sort_order = parseInt(tsvCountry.sort_order) || parseInt(tsvCountry.id) || 1000;
+                          diagramCountry.sort_order = sort_order;
+                      }
+                      if (diagramCountry.id == tsvCountry.id)  diagramCountry.name = tsvCountry.name;
+                      if (diagramCountry.id == tsvCountry.id) return diagramCountry; //return d.name = n.name;
                   });
               }).sort(function(a, b) {
-                          return a.name.localeCompare(b.name);
+                          console.log(a);
+//                          return a.name.localeCompare(b.name);
+                          return a.sort_order - b.sort_order;
                       });
 
               (function transition() {
@@ -91,7 +99,7 @@
                                   for (k=0; k<=i; k++){
                                       color = 220 - (k*10);
                                       color_str = color.toString(16)  ;
-                                      console.log("my color is:"+color_str)  ;
+//                                      console.log("my color is:"+color_str)  ;
                                       c.fillStyle = "#FF"+color_str+"00", c.beginPath(), path(countries[k]), c.fill();
                                   }
                                   c.strokeStyle = "#fff", c.lineWidth = .5, c.beginPath(), path(borders), c.stroke();

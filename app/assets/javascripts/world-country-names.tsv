@@ -1,8 +1,7 @@
-id	name	word_for_orange
+id	name	word_for_orange	sort_order
 -1	Northern Cyprus	sample_word_1
 -2	Kosovo	sample_word_2
 -3	Somaliland	sample_word_3
-4	Afghanistan	Pashto: نارنج
 8	Albania	sample_word_4
 10	Antarctica	sample_word_5
 12	Algeria	sample_word_6
@@ -104,10 +103,10 @@ id	name	word_for_orange
 344	Hong Kong
 348	Hungary
 352	Iceland
-356	India
+356	India	nāraṅga	1
 360	Indonesia
-364	Iran, Islamic Republic of
-368	Iraq
+364	Iran, Islamic Republic of	nārang	3
+368	Iraq	nāranj	4
 372	Ireland
 376	Israel
 380	Italy
@@ -171,7 +170,7 @@ id	name	word_for_orange
 583	Micronesia, Federated States of
 584	Marshall Islands
 585	Palau
-586	Pakistan
+586	Pakistan	nārang	2
 591	Panama
 598	Papua New Guinea
 600	Paraguay
@@ -219,7 +218,7 @@ id	name	word_for_orange
 748	Swaziland
 752	Sweden
 756	Switzerland
-760	Syrian Arab Republic
+760	Syrian Arab Republic	nāranj	4
 762	Tajikistan
 764	Thailand
 768	Togo
