@@ -65,7 +65,6 @@
 
               countries = countries.filter(function(diagramCountry) {
                   return names.some(function(tsvCountry) {
-//                      console.log(n.word_for_orange);
                       if (diagramCountry.id == tsvCountry.id) {
                           diagramCountry.word_for_orange= tsvCountry.word_for_orange;
                           // If sort order is not specified, use the id for the sort order. If that is NaN, then
